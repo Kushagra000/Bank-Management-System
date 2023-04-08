@@ -39,8 +39,15 @@ public class Login extends JFrame {
 
         JButton login = new JButton("SIGN IN");
         login.setBounds(300,300,100,30);
-//        login.setBackground();
+        login.setBackground(Color.BLACK);
+        login.setForeground(Color.WHITE);
         add(login);
+
+        JButton clear = new JButton("CLEAR");
+        clear.setBounds(450,300,100,30);
+        clear.setBackground(Color.BLACK);
+        clear.setForeground(Color.WHITE);
+        add(clear);
 
         getContentPane().setBackground(Color.WHITE);
         setSize(800,480);
