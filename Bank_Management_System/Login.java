@@ -2,8 +2,12 @@ package Bank_Management_System;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener {
+    JButton login , signup , clear;
+    JTextField cardTextField, pinTextField;
     Login(){
         setTitle("Automatic Teller Machine");
         setLayout(null);
@@ -24,30 +28,40 @@ public class Login extends JFrame {
         cardno.setBounds(120,150,150,30);
         add(cardno);
 
-        JTextField cardTextField = new JTextField();
-        cardTextField.setBounds(300,150,250,30);
+        cardTextField = new JTextField();
+        cardTextField.setBounds(300,150,230,30);
         add(cardTextField);
 
         JLabel pin = new JLabel("PIN:");
         pin.setFont(new Font("Raleway", Font.BOLD,28));
-        pin.setBounds(120,220,250,30);
+        pin.setBounds(120,220,150,30);
         add(pin);
 
-        JTextField pinTextField = new JTextField();
-        pinTextField.setBounds(300,220,250,30);
+        pinTextField = new JTextField();
+        pinTextField.setBounds(300,220,230,30);
         add(pinTextField);
 
-        JButton login = new JButton("SIGN IN");
+        login = new JButton("SIGN IN");
         login.setBounds(300,300,100,30);
         login.setBackground(Color.BLACK);
         login.setForeground(Color.WHITE);
+        login.addActionListener(this);
         add(login);
 
-        JButton clear = new JButton("CLEAR");
-        clear.setBounds(450,300,100,30);
+        clear = new JButton("CLEAR");
+        clear.setBounds(430,300,100,30);
         clear.setBackground(Color.BLACK);
         clear.setForeground(Color.WHITE);
+        clear.addActionListener(this);
         add(clear);
+
+        signup = new JButton("SIGN UP");
+        signup.setBounds(300,350,230,30);
+        signup.setBackground(Color.BLACK);
+        signup.setForeground(Color.WHITE);
+        signup.addActionListener(this);
+        add(signup);
+
 
         getContentPane().setBackground(Color.WHITE);
         setSize(800,480);
@@ -55,8 +69,25 @@ public class Login extends JFrame {
         setLocation(250,200);
     }
 
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==clear){
+            cardTextField.setText("jbfdkwqbk");
+        }
+        else if (e.getSource()==login) {
+
+        } else if (e.getSource()== signup) {
+            
+        }
+
+
+    }
+
     public static void main(String args[]){
         new Login();
 
     }
 }
+
