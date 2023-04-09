@@ -104,7 +104,7 @@ public class signup1 extends JFrame {
 
         JTextField pincodeTextField = new JTextField();
         pincodeTextField.setFont(new Font("Raleway", Font.BOLD ,14));
-        pincodeTextField.setBounds( 300,540,400,30);
+        pincodeTextField.setBounds( 300,590,400,30);
         add(pincodeTextField);
 
         getContentPane().setBackground(Color.WHITE);
