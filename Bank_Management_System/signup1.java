@@ -20,6 +20,13 @@ public class signup1 extends JFrame {
         persondetails.setFont(new Font("Raleway",Font.BOLD,22));
         persondetails.setBounds(290,80,400,30);
         add(persondetails);
+
+        JLabel name = new JLabel("Name");
+        name.setFont(new Font("Raleway",Font.BOLD,20));
+        name.setBounds(100,140,100,30);
+        add(name);
+
+
         getContentPane().setBackground(Color.WHITE);
         setSize(850,800);
         setLocation(350,10);
