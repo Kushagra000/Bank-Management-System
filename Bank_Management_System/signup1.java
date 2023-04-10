@@ -162,6 +162,7 @@ public class signup1 extends JFrame implements ActionListener {
         next.setForeground(Color.WHITE);
         next.setFont(new Font("Raleway",Font.BOLD,14));
         next.setBounds(620,660,80,30);
+        next.addActionListener(this);
         add(next);  
 
         getContentPane().setBackground(Color.WHITE);
@@ -181,7 +182,51 @@ public class signup1 extends JFrame implements ActionListener {
             gender = "female";
         }
         String email = emailTextField.getText();
-        
+        String marital = null;
+        if (married.isSelected()){
+            marital = "married";
+        }
+        if (unmarried.isSelected()){
+            marital="unmarried";
+        }
+        if (other.isSelected()){
+            marital = "other";
+        }
+        String address = addressTextField.getText();
+        String city = cityTextField.getText();
+        String state = stateTextField.getText();
+        String pincode = pincodeTextField.getText();
+
+        try{
+            if(name.equals("")){
+                JOptionPane.showMessageDialog(null,"Name is required!");
+            } else if (fname.equals("")) {
+                JOptionPane.showMessageDialog(null,"Father's name is required!");
+            }else if (dob.equals("")) {
+                JOptionPane.showMessageDialog(null,"Date of birth is required!");
+            }else if (gender.equals("")) {
+                JOptionPane.showMessageDialog(null,"Gender is required!");
+            }else if (email.equals("")) {
+                JOptionPane.showMessageDialog(null,"Email is required!");
+            }else if (marital.equals("")) {
+                JOptionPane.showMessageDialog(null,"Marital Status is required!");
+            }else if (address.equals("")) {
+                JOptionPane.showMessageDialog(null,"Address is required!");
+            }else if (city.equals("")) {
+                JOptionPane.showMessageDialog(null,"City is required!");
+            }else if (state.equals("")) {
+                JOptionPane.showMessageDialog(null,"State is required!");
+            }else if (pincode.equals("")) {
+                JOptionPane.showMessageDialog(null,"Pin Code is required!");
+            }else {
+                conn c = new conn();
+                String query = "insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pincode+"','"+state+"')";
+                c.s.executeUpdate(query);
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+
     }
     public static void main(String args[]){
         new signup1();
