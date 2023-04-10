@@ -57,6 +57,20 @@ public class signup1 extends JFrame {
         gender.setBounds(100,290,200,30);
         add(gender);
 
+        JRadioButton male = new JRadioButton("Male");
+        male.setBounds(300, 290 ,60, 30);
+        male.setBackground(Color.WHITE);
+        add(male);
+
+        JRadioButton female = new JRadioButton("female");
+        female.setBounds(450,290,100,30);
+        female.setBackground(Color.WHITE);
+        add(female);
+
+        ButtonGroup gendergroup = new ButtonGroup();
+        gendergroup.add(male);
+        gendergroup.add(female);
+
         JLabel email = new JLabel("Email Address:");
         email.setFont(new Font("Raleway",Font.BOLD,20));
         email.setBounds(100,340,200,30);
@@ -71,6 +85,26 @@ public class signup1 extends JFrame {
         marital.setFont(new Font("Raleway",Font.BOLD,20));
         marital.setBounds(100,390,200,30);
         add(marital);
+
+        JRadioButton married = new JRadioButton("Married");
+        married.setBounds(300, 390 ,100, 30);
+        married.setBackground(Color.WHITE);
+        add(married);
+
+        JRadioButton unmarried = new JRadioButton("Unmarried");
+        unmarried.setBounds(450,390,100,30);
+        unmarried.setBackground(Color.WHITE);
+        add(unmarried);
+
+        JRadioButton other = new JRadioButton("Others");
+        other.setBounds(600,390,100,30);
+        other.setBackground(Color.WHITE);
+        add(other);
+
+        ButtonGroup maritalgroup = new ButtonGroup();
+        maritalgroup.add(married);
+        maritalgroup.add(unmarried);
+        maritalgroup.add(other);
 
         JLabel address = new JLabel("Address:");
         address.setFont(new Font("Raleway",Font.BOLD,20));
@@ -112,6 +146,13 @@ public class signup1 extends JFrame {
         pincodeTextField.setFont(new Font("Raleway", Font.BOLD ,14));
         pincodeTextField.setBounds( 300,590,400,30);
         add(pincodeTextField);
+
+        JButton next = new JButton("Next");
+        next.setBackground(Color.BLACK);
+        next.setForeground(Color.WHITE);
+        next.setFont(new Font("Raleway",Font.BOLD,14));
+        next.setBounds(620,660,80,30);
+        add(next);
 
         getContentPane().setBackground(Color.WHITE);
         setSize(850,800);
