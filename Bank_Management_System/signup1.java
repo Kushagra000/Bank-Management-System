@@ -48,7 +48,8 @@ public class signup1 extends JFrame {
         add(dob);
 
         JDateChooser dateChooser = new JDateChooser();
-        dateChooser.setBounds(300,240, 200,30);
+        dateChooser.setBounds(300,240, 400,30);
+        dateChooser.setForeground(new Color(250,250,250));
         add(dateChooser);
 
         JLabel gender = new JLabel("Gender:");
