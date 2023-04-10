@@ -152,7 +152,7 @@ public class signup1 extends JFrame {
         next.setForeground(Color.WHITE);
         next.setFont(new Font("Raleway",Font.BOLD,14));
         next.setBounds(620,660,80,30);
-        add(next);
+        add(next);  
 
         getContentPane().setBackground(Color.WHITE);
         setSize(850,800);
