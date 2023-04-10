@@ -170,7 +170,18 @@ public class signup1 extends JFrame implements ActionListener {
         setVisible(true);
     }
     public void actionPerformed(ActionEvent ae){
-
+        String formno = ""+ random;
+        String name = nameTextField.getText();
+        String fname = fnameTextField.getText();
+        String dob = ((JTextField)dateChooser.getDateEditor().getUiComponent()).getText();
+        String gender = null;
+        if (male.isSelected()){
+            gender = "male";
+        } else if (female.isSelected()) {
+            gender = "female";
+        }
+        String email = emailTextField.getText();
+        
     }
     public static void main(String args[]){
         new signup1();
