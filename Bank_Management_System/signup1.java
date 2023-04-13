@@ -1,10 +1,12 @@
 package Bank_Management_System;
+
+import com.toedter.calendar.JDateChooser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*;
-import com.toedter.calendar.JDateChooser;
+import java.util.Random;
 
 public class signup1 extends JFrame implements ActionListener {
 
