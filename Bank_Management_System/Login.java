@@ -2,8 +2,8 @@ package Bank_Management_System;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.sql.*;
 
 public class Login extends JFrame implements ActionListener {
     JButton login , signup , clear;
@@ -81,10 +81,24 @@ public class Login extends JFrame implements ActionListener {
             pinTextField.setText("");
         }
         else if (e.getSource()==login) {
-
-        } else if (e.getSource()== signup)
+            conn conn = new conn();
+            String cardnumber = cardTextField.getText();
+            String pinnumber = pinTextField.getText();
+            String query = "select * from login where cardnumber ='"+cardnumber+"' and  pin = '"+pinnumber+"'";
+            try{
+                ResultSet rs= conn.s.executeQuery(query);
+                if (rs.next()){
+                    setVisible(false);
+                    new Transactions().setVisible(true);
+                }else {
+                    JOptionPane.showMessageDialog(null,"Incorrect card number or pin");
+                }
+            }catch (Exception ae){
+                System.out.println(ae);
+            }
+        } else if (e.getSource()== signup){
         setVisible(false);
-        new signup1().setVisible(true);{
+        new signup1().setVisible(true);
             
         }
 
