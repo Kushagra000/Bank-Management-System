@@ -7,8 +7,10 @@ import java.awt.event.*;
 public class deposit extends JFrame implements ActionListener {
     JButton deposit,back;
     JTextField amount;
-
-    deposit(){
+    String pinnumber;
+    deposit(String pinnumber){
+        this.pinnumber = pinnumber;
+        setLayout(null);
 
         ImageIcon i1= new ImageIcon(ClassLoader.getSystemResource("Bank_Management_System/icons/atm.jpg"));
         Image i2 = i1.getImage().getScaledInstance(900,900,Image.SCALE_DEFAULT);
@@ -43,12 +45,12 @@ public class deposit extends JFrame implements ActionListener {
     }
     public void actionPerformed(ActionEvent ae){
         if (ae.getSource()==deposit){
-            
-        } else if (ae.getSource()==back) {
 
+        } else if (ae.getSource()==back) {
+            System.exit(0);
         }
     }
     public static void main(String args[]){
-        new deposit();
+        new deposit("");
     }
 }
