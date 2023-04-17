@@ -6,7 +6,9 @@ import java.awt.event.*;
 
 public class Transactions extends JFrame implements ActionListener {
     JButton deposite , withdrawl ,fastcash,ministatement,pinchange,balanceenquiry,exit;
-    Transactions(){
+    String pinnumber;
+    Transactions(String pinnumber){
+        this.pinnumber = pinnumber;
 
         ImageIcon i1= new ImageIcon(ClassLoader.getSystemResource("Bank_Management_System/icons/atm.jpg"));
         Image i2 = i1.getImage().getScaledInstance(900,900,Image.SCALE_DEFAULT);
@@ -69,6 +71,6 @@ public class Transactions extends JFrame implements ActionListener {
     }
 
     public static void main(String args[]){
-        new Transactions();
+        new Transactions("");
     }
 }

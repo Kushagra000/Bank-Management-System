@@ -194,6 +194,7 @@ public class SignupThree extends JFrame implements ActionListener {
                             c.s.executeUpdate(query2);
 
                             JOptionPane.showMessageDialog(null,"Card Number: "+ cardnumber + "/n"+"Pin Number: " +pinnumber);
+                            setVisible(false);
                         }
                     }catch (Exception e){
                         System.out.println(e);
