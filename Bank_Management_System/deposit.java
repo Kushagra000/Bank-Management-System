@@ -3,6 +3,7 @@ package Bank_Management_System;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 
 public class deposit extends JFrame implements ActionListener {
     JButton deposit,back;
@@ -32,10 +33,12 @@ public class deposit extends JFrame implements ActionListener {
 
         deposit = new JButton("Deposit");
         deposit.setBounds(355,485,150,30);
+        deposit.addActionListener(this);
         image.add(deposit);
 
         back = new JButton("Back");
         back.setBounds(355,520,150,30);
+        back.addActionListener(this);
         image.add(back);
 
 
@@ -45,9 +48,23 @@ public class deposit extends JFrame implements ActionListener {
     }
     public void actionPerformed(ActionEvent ae){
         if (ae.getSource()==deposit){
-
+            String number = amount.getText();
+            Date date = new Date();
+            if(number.equals("")){
+                JOptionPane.showMessageDialog(null,"Enter amount you want to deposite");
+            }else{
+                try {
+                    conn conn = new conn();
+                    String query = "insert into bank values('" + pinnumber + "','" + date + "','Deposite','" + number + "')";
+                    conn.s.executeUpdate(query);
+                    JOptionPane.showMessageDialog(null, "RS" + number + " add to your bank account.");
+                }catch (Exception e){
+                    System.out.println(e);
+                }
+            }
         } else if (ae.getSource()==back) {
-            System.exit(0);
+            setVisible(false);
+            new Transactions(pinnumber).setVisible(true);
         }
     }
     public static void main(String args[]){
