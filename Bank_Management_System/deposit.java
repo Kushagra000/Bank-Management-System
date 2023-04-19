@@ -58,6 +58,8 @@ public class deposit extends JFrame implements ActionListener {
                     String query = "insert into bank values('" + pinnumber + "','" + date + "','Deposite','" + number + "')";
                     conn.s.executeUpdate(query);
                     JOptionPane.showMessageDialog(null, "RS" + number + " add to your bank account.");
+                    setVisible(false);
+                    new Transactions(pinnumber).setVisible(true);
                 }catch (Exception e){
                     System.out.println(e);
                 }
