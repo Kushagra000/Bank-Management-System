@@ -201,6 +201,8 @@ public class SignupThree extends JFrame implements ActionListener {
                         System.out.println(e);
                     }
         } else if (ae.getSource()==cancel) {
+            setVisible(false);
+            new Login().setVisible(true);
             
         }
     } 
